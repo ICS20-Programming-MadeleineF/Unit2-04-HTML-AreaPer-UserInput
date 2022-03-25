@@ -16,3 +16,29 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Area with User Input, with a JS file</title>
   </head>
+   <body>
+    <script src="./js/script.js"></script>
+    <h1>User Input and Area & Perimeter, with a JS file</h1>
+     <!-- table with image and formula -->
+     <table>
+          <tr>
+            <th>
+              <img src="./images/main-qimg-16434f5bf208ed5d93085bed4946caca.png" alt="triangle" width="75%" height="auto"/>
+            </th>
+            <th>
+              <h2>Formulas</h2>
+              <h3>A= ( a + b ) / 2</h3>
+              <h3>P = ( a + b ) + √ ( a² + b² )</h3>
+            </th>
+          </tr>
+        </table>
+    <p>
+      <h3>Enter the following NOW:</h3>
+      <form action="javascript:enterClicked()">
+        <label for="streetname">Street Name</label>
+        <input type="text" id="street-name" placeholder="Street Name"><br><br>
+        <label for="streetnumber">Street Number</label>
+        <input type="number" id="streetnumber-entered" placeholder="Street Number"><br><br>
+        <input type="submit" value="Enter">
+      </form>
+    </p>
