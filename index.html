@@ -1,44 +1,93 @@
 <!DOCTYPE html>
 <!--ICS20-Unit2-04-HTML-AreaPer-UserInput -->
-<html>
+<html lang="en-ca">
   <head>
     <!-- meta data -->
-    <meta charset="utf-8">
-    <meta name="description" content="Area with User Input, with JavaScript">
-    <meta name="keywords" content="immaculata, ics2o">
-    <meta name="author" content="Madeleine Forgeron">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="description" content="Area and Perimeter, with JavaScript" />
+    <meta name="keywords" content="immaculata, ics2o" />
+    <meta name="author" content="Madeleine Forgeron" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-    <link rel="manifest" href="./fav/site.webmanifest">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Area with User Input, with a JS file</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./faviconfavicon-16x16.png" />
+    <link rel="manifest" href="./favicon/site.webmanifest" 
+    <!-- MDL link -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_orange-amber.min.css" />
+    <!-- css link -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Area and Perimeter of a Triangle, with JavaScript</title>
   </head>
-   <body>
+  <body>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- JS link -->
     <script src="./js/script.js"></script>
-    <h1>User Input and Area & Perimeter, with a JS file</h1>
-     <!-- table with image and formula -->
-     <table>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Area and Perimeter of a triangle, with JS</span>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <table>
           <tr>
             <th>
               <img src="./images/main-qimg-16434f5bf208ed5d93085bed4946caca.png" alt="triangle" width="75%" height="auto"/>
             </th>
             <th>
               <h2>Formulas</h2>
-              <h3>A= ( a + b ) / 2</h3>
-              <h3>P = ( a + b ) + √ ( a² + b² )</h3>
+              <h3>A = (B x H) / 2</h3>
+              <h3>P = (B + H)+ √ (B² + H²)</h3>
             </th>
           </tr>
         </table>
-    <p>
-      <h3>Enter the following NOW:</h3>
-      <form action="javascript:enterClicked()">
-        <label for="streetname">Street Name</label>
-        <input type="text" id="street-name" placeholder="Street Name"><br><br>
-        <label for="streetnumber">Street Number</label>
-        <input type="number" id="streetnumber-entered" placeholder="Street Number"><br><br>
-        <input type="submit" value="Enter">
-      </form>
-    </p>
+        <!-- Simple Textfield -->
+        <form action="#">
+          <p>Base</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="base-of-triangle"
+            />
+            <label class="mdl-textfield__label" for="base-of-triangle">base ...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+				
+        <!-- Numeric Textfield -->
+        <form action="#">
+          <p>Height</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="height-of-triangle"
+            />
+            <label class="mdl-textfield__label" for="height-of-triangle">height ...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+				
+        <!-- Raised button with ripple -->
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="calculate()"
+        >
+          Calculate
+        </button>
+        <br />
+        <p>
+          <div id="answers">
+            <div id="area"></div>
+            <div id="perimeter"></div>
+          </div>
+        </p>
+      </main>
+    </div>
+  </body>
+</html>
